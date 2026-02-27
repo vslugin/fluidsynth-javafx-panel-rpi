@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="480.0" maxWidth="320.0" minHeight="480.0" minWidth="320.0" spacing="10"
+      style="-fx-background-color: black;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="synth.MainController">
+    <Label prefHeight="23.0" prefWidth="93.0" text="SF2 ФАЙЛ:" textFill="WHITE" VBox.vgrow="ALWAYS">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <ListView fx:id="soundFontList" onMouseClicked="#loadSoundFont" prefHeight="120.0" prefWidth="447.0"
+              style="-fx-background-color: gray;"/>
+    <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="320.0">
+        <children>
+            <Label layoutX="120.0" layoutY="10.0" text="КАНАЛ:" textFill="WHITE">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+                <padding>
+                    <Insets right="10.0"/>
+                </padding>
+            </Label>
+            <Spinner fx:id="channelSpinner" onMouseClicked="#updateSpinnerValues" maxWidth="110.0" prefHeight="59.0" prefWidth="76.0"/>
+            <Label text="ИНСТРУМЕНТ:" textFill="WHITE">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+            </Label>
+        </children>
+    </HBox>
+    <ListView fx:id="instrumentsList" onMouseClicked="#loadProgram" prefHeight="180.0"
+              style="-fx-background-color: gray;"/>
+    <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="320.0">
+        <children>
+            <Label text="УСТ:" textFill="WHITE">
+                <padding>
+                    <Insets right="10.0"/>
+                </padding>
+                <font>
+                    <Font size="12.0"/>
+                </font>
+            </Label>
+            <Spinner fx:id="presetsSpinner" maxWidth="110.0" prefHeight="59.0"
+                     prefWidth="76.0"/>
+
+            <Button alignment="CENTER" layoutX="130.0" layoutY="19.0" maxHeight="30.0" onAction="#loadPreset"
+                    style="-fx-background-color: green;" text="Заг" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="5.0" right="5.0"/>
+                </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" maxHeight="30.0" onAction="#savePreset" style="-fx-background-color: blue;"
+                    text="Сох" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="5.0" right="5.0"/>
+                </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="130.0" layoutY="19.0" maxHeight="30.0" onAction="#reset"
+                    style="-fx-background-color: red;" text="Сбр" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="5.0" right="5.0"/>
+                </HBox.margin>
+            </Button>
+        </children>
+    </HBox>
+
+    <StackPane fx:id="bottomContainer" VBox.vgrow="ALWAYS">
+        <!-- Блок команд -->
+        <HBox fx:id="commandBox" alignment="CENTER" VBox.vgrow="ALWAYS">
+            <children>
+                <TextField fx:id="cmd" alignment="CENTER" maxHeight="70.0" prefHeight="35.0" prefWidth="198.0"
+                           style="-fx-background-color: gray;" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </TextField>
+                <Button alignment="CENTER" onAction="#runCmd" prefHeight="35.0" prefWidth="75.0"
+                        style="-fx-background-color: gray;" text="Команда" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="3.0" right="3.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+
+        <!-- Блок уведомления -->
+        <HBox fx:id="notificationBox" alignment="CENTER" managed="false" style="-fx-background-color: #444444;"
+              visible="false" StackPane.alignment="CENTER">
+            <children>
+                <Label fx:id="notificationLabel" style="-fx-font-size: 14px;" text="Некоторый текст" textFill="white"
+                       HBox.hgrow="ALWAYS"/>
+            </children>
+        </HBox>
+
+    </StackPane>
+
+</VBox>

@@ -1,0 +1,55 @@
+.list-view .scroll-bar:vertical {
+    -fx-pref-width: 50px;
+}
+
+.list-view .scroll-bar:horizontal {
+    -fx-pref-height: 50px;
+}
+
+/* кнопки сверху и снизу вертикального скролла */
+.list-view .scroll-bar:vertical .increment-button,
+.list-view .scroll-bar:vertical .decrement-button {
+    -fx-pref-height: 30px;   /* высота кнопок */
+}
+
+/* кнопки слева и справа горизонтального */
+.list-view .scroll-bar:horizontal .increment-button,
+.list-view .scroll-bar:horizontal .decrement-button {
+    -fx-pref-width:50px;
+}
+
+.list-view .scroll-bar .increment-arrow,
+.list-view .scroll-bar .decrement-arrow {
+    -fx-scale-x: 1.8;
+    -fx-scale-y: 1.8;
+}
+
+.list-view .scroll-bar:vertical {
+    -fx-pref-width: 50px;
+}
+
+.list-view .scroll-bar:horizontal {
+    -fx-pref-height: 50px;
+}
+
+.list-view, .text-field {
+    -fx-font-size: 18px;   /* размер текста */
+}
+
+.list-view .scroll-bar:horizontal {
+    -fx-pref-height: 0;
+}
+
+/* Увеличиваем кнопки спиннера */
+.spinner > .increment-arrow-button,
+.spinner > .decrement-arrow-button {
+    -fx-pref-width: 50px;   /* ширина кнопки */
+    -fx-pref-height: 50px;  /* высота кнопки */
+}
+
+/* Увеличиваем стрелки внутри кнопок */
+.spinner > .increment-arrow-button > .arrow,
+.spinner > .decrement-arrow-button > .arrow {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+}
