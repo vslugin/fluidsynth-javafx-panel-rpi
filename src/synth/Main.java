@@ -28,7 +28,7 @@ public class Main extends Application {
 
         try {
             if (FLUIDSYNTH_TURN_RIGHT_90) {
-                loader = new FXMLLoader(getClass().getResource("/synth/layout.fxml"));
+                loader = new FXMLLoader(getClass().getResource("layout.fxml"));
                 Parent root = loader.load();
                 Pane wrapper = new Pane();
                 wrapper.getChildren().add(root);
