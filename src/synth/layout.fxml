@@ -8,7 +8,7 @@
 <VBox alignment="TOP_CENTER" maxHeight="480.0" maxWidth="320.0" minHeight="480.0" minWidth="320.0" spacing="10" style="-fx-background-color: black;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="synth.MainController">
     <Label prefHeight="23.0" prefWidth="93.0" text="SF2 ФАЙЛ:" textFill="WHITE" VBox.vgrow="ALWAYS">
         <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
         </font>
     </Label>
     <ListView fx:id="soundFontList" onMouseClicked="#loadSoundFont" prefHeight="120.0" prefWidth="447.0" style="-fx-background-color: gray;" />
@@ -16,7 +16,7 @@
         <children>
             <Label layoutX="120.0" layoutY="10.0" text="КАНАЛ:" textFill="WHITE">
                 <font>
-                    <Font size="18.0" />
+                    <Font size="16.0" />
                 </font>
                 <padding>
                     <Insets right="10.0" />
@@ -48,7 +48,7 @@
 
             <Button alignment="CENTER" layoutX="130.0" layoutY="19.0" maxHeight="30.0" onAction="#loadPreset" style="-fx-background-color: green;" text="Заг" textAlignment="CENTER" textFill="WHITE">
                 <font>
-                    <Font name="System Bold" size="14.0" />
+                    <Font name="System Bold" size="16.0" />
                 </font>
                 <HBox.margin>
                     <Insets left="5.0" right="5.0" />
@@ -56,7 +56,7 @@
             </Button>
             <Button alignment="CENTER" maxHeight="30.0" onAction="#savePreset" style="-fx-background-color: blue;" text="Сох" textAlignment="CENTER" textFill="WHITE">
                 <font>
-                    <Font name="System Bold" size="14.0" />
+                    <Font name="System Bold" size="16.0" />
                 </font>
                 <HBox.margin>
                     <Insets left="5.0" right="5.0" />
@@ -64,7 +64,7 @@
             </Button>
             <Button alignment="CENTER" layoutX="130.0" layoutY="19.0" maxHeight="30.0" onAction="#reset" style="-fx-background-color: red;" text="Сбр" textAlignment="CENTER" textFill="WHITE">
                 <font>
-                    <Font name="System Bold" size="13.0" />
+                    <Font name="System Bold" size="16.0" />
                 </font>
                 <HBox.margin>
                     <Insets left="5.0" right="5.0" />

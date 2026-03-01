@@ -36,12 +36,27 @@ public class FluidSynthService {
         command.add(FLUIDSYNTH_AUDIO_DRIVER);
         command.add("-m");
         command.add(FLUIDSYNTH_MIDI_DRIVER);
+
         if (FLUIDSYNTH_AUTO_CONNECT_MIDI_DEVICES) {
             command.add("-o");
             command.add("midi.autoconnect=1");
         }
+
         command.add("-o");
-        command.add("midi.portname=FluidSynth_Main");
+        command.add("midi.portname=" + FLUIDSYNTH_PORT_NAME);
+
+        if (FLUIDSYNTH_RT_PRIO > 0) {
+            command.add("-o");
+            command.add("audio.realtime-prio=" + String.valueOf(FLUIDSYNTH_RT_PRIO));
+        }
+        command.add("-r");
+        command.add(String.valueOf(FLUIDSYNTH_SAMPLE_RATE));
+        command.add("-z");
+        command.add(String.valueOf(FLUIDSYNTH_BUFFER_SIZE));
+        command.add("-c");
+        command.add(String.valueOf(FLUIDSYNTH_BUFFERS_COUNT));
+        command.add("-g");
+        command.add(String.valueOf(FLUIDSYNTH_GAIN));
 
         File[] files = sfDir.listFiles((d, name) -> name.endsWith(".sf2"));
 
