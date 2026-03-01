@@ -10,6 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -45,9 +46,9 @@ public class Main extends Application {
 
             stage.setTitle(APP_TITLE);
             stage.setScene(scene);
-            // stage.setFullScreen(true);
+            stage.setFullScreen(true);
             stage.setFullScreenExitHint(""); // скрыть ESC-подсказку
-            // stage.initStyle(StageStyle.UNDECORATED);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setResizable(false);
 
             stage.setOnCloseRequest(e -> {
