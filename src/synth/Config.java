@@ -16,8 +16,10 @@ public final class Config {
     // === FluidSynth ===
     public static final String FLUIDSYNTH_PATH = "/opt/homebrew/bin/fluidsynth";
 
-    // FOR MAC
     public static final Boolean FLUIDSYNTH_AUTO_CONNECT_MIDI_DEVICES = true;
+    public static final Boolean FLUIDSYNTH_TURN_RIGHT_90 = true;
+
+    // FOR MAC
     public static final String FLUIDSYNTH_AUDIO_DRIVER = "coreaudio";
     public static final String FLUIDSYNTH_MIDI_DRIVER = "coremidi";
 

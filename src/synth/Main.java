@@ -2,10 +2,12 @@ package synth;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
@@ -21,11 +23,23 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
 
-        try {
-            FXMLLoader loader =
-                    new FXMLLoader(getClass().getResource("layout.fxml"));
+        FXMLLoader loader;
+        Scene scene;
 
-            Scene scene = new Scene(loader.load(), WINDOW_WIDTH, WINDOW_HEIGHT);
+        try {
+            if (FLUIDSYNTH_TURN_RIGHT_90) {
+                loader = new FXMLLoader(getClass().getResource("layout.fxml"));
+                Parent root = loader.load();
+                Pane wrapper = new Pane();
+                wrapper.getChildren().add(root);
+                root.setRotate(90);
+                root.setLayoutX(80);
+                root.setLayoutY(-80);
+                scene = new Scene(wrapper, WINDOW_HEIGHT, WINDOW_WIDTH);
+            } else {
+                loader = new FXMLLoader(getClass().getResource("layout.fxml"));
+                scene = new Scene(loader.load(), WINDOW_WIDTH, WINDOW_HEIGHT);
+            }
 
             MainController controller = loader.getController();
 
